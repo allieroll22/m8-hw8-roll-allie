@@ -8,6 +8,8 @@
   text-transform: uppercase;
   font-family: sans-serif;
   list-style-type: none;
+  transition-duration: 1.0s;
+
 }
 .main-menu-labels {
   margin: 0;
@@ -18,16 +20,37 @@
 }
 /* Sub Menu Styling */
 .sub-menu {
-  display: none;
   padding-left: 0;
   background-color: #dde1e7;
 
 }
 .sub-menu li {
-
   display: block;
   width: 100%;
   padding: 20px;
   border: 2px solid #fff;
   box-sizing: border-box;
+  transition-duration: 1.0s;
+}
+.main-menu li:hover {
+  cursor: pointer;
+}
+.sub-menu li {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  left:0;
+  display: none;
+}
+
+.main-menu li:hover > .sub-menu li,
+.main-menu li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
 }
